@@ -1,0 +1,20 @@
+{
+  "name": "vue-droparea",
+  "description": "Drop",
+  "repository": "https://github.com/TomokiMiyauci/vue-droparea",
+  "author": "TomokiMiyauci <development.operation.6.6.6@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "commitizen": "^4.2.2",
+    "lerna": "^3.22.1"
+  },
+  "workspaces": [
+    "packages/**"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+}
