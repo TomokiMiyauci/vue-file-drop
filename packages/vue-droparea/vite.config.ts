@@ -13,6 +13,7 @@ const config: UserConfig = {
   rollupOutputOptions: {
     name: 'MyComponent',
     exports: 'named',
+    entryFileNames: 'vue-droparea.js',
   },
 }
 

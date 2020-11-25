@@ -3,12 +3,7 @@
   "version": "0.0.0",
   "author": "TomokiMiyauci <development.operation.6.6.6@gmail.com>",
   "license": "MIT",
-  "main": "dist/my-component.umd.js",
-  "module": "dist/my-component.esm.js",
-  "unpkg": "dist/my-component.min.js",
-  "browser": {
-    "./sfc": "src/my-component.vue"
-  },
+  "main": "dist/_assets/vue-droparea.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -29,7 +24,6 @@
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-typescript": "^7.0.0",
     "commitizen": "^4.2.2",
-    "cz-emoji": "^1.3.1",
     "eslint": "^7.14.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-vue": "^7.1.0",
@@ -56,7 +50,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "cz-emoji"
+      "path": "cz-conventional-changelog"
     }
   }
 }
