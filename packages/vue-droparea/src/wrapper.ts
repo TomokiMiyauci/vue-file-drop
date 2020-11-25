@@ -3,6 +3,7 @@ import component from './components/VueDroparea.vue'
 
 // Vue.use() によって実行される install 関数を定義
 export function install(Vue: any): void {
+  console.log(Vue, install, install.installed)
   if (install.installed) return
   install.installed = true
   Vue.component('VueDroparea', component)
@@ -16,7 +17,7 @@ const plugin = {
 
 // vue が見つかった場合に自動インストールする (ブラウザで <script> タグを用いた場合等)
 let GlobalVue = null
-if (typeof window !== 'undefined' && 'Vue' in window) {
+if (typeof window !== 'undefined') {
   GlobalVue = window.Vue
 } else if (typeof global !== 'undefined') {
   GlobalVue = global.Vue
