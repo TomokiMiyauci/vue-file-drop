@@ -1,17 +1,14 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld />
+  <vue-droparea style="width: 500px; margin: 0 auto" />
 </template>
 
 <script lang="ts">
   import { defineComponent } from 'vue'
-
-  import HelloWorld from '/@/components/HelloWorld.vue'
+  import VueDroparea from './components/VueDroparea.vue'
 
   export default defineComponent({
-    name: 'App',
     components: {
-      HelloWorld,
+      VueDroparea,
     },
   })
 </script>
