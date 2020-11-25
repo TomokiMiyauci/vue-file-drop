@@ -3,6 +3,12 @@
   "version": "0.0.0",
   "author": "TomokiMiyauci <development.operation.6.6.6@gmail.com>",
   "license": "MIT",
+  "main": "dist/my-component.umd.js",
+  "module": "dist/my-component.esm.js",
+  "unpkg": "dist/my-component.min.js",
+  "browser": {
+    "./sfc": "src/my-component.vue"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,6 +17,9 @@
     "lint:style": "stylelint src/**/*.{css,scss,vue}"
   },
   "dependencies": {
+    "@mdi/js": "^5.8.55",
+    "file-select-dialog": "^1.4.0",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "vue": "^3.0.2"
   },
   "devDependencies": {
@@ -27,6 +36,7 @@
     "husky": "^4.3.0",
     "lint-staged": "^10.5.1",
     "prettier": "^2.2.0",
+    "sass": "^1.29.0",
     "stylelint": "^13.8.0",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-standard": "^20.0.0",
