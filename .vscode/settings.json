@@ -5,6 +5,8 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
+  "scss.validate": false,
+  "css.validate": false,
   "vetur.format.scriptInitialIndent": true,
   "vetur.validation.templateProps": true
 }
