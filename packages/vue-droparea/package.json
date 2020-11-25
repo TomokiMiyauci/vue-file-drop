@@ -1,6 +1,6 @@
 {
   "name": "vue-droparea",
-  "version": "0.1.1-alpha.0",
+  "version": "0.1.2-alpha.0",
   "author": "TomokiMiyauci <development.operation.6.6.6@gmail.com>",
   "license": "MIT",
   "main": "dist/_assets/vue-droparea.js",
@@ -21,7 +21,6 @@
   ],
   "devDependencies": {
     "@mdi/js": "^5.8.55",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "@typescript-eslint/eslint-plugin": "^4.8.1",
     "@typescript-eslint/parser": "^4.8.1",
     "@vue/compiler-sfc": "^3.0.2",
@@ -38,6 +37,7 @@
     "stylelint": "^13.8.0",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-standard": "^20.0.0",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "typescript": "^4.1.2",
     "vite": "^1.0.0-rc.9",
     "vti": "^0.0.18"
