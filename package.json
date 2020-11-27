@@ -1,7 +1,7 @@
 {
-  "name": "vue-droparea",
+  "name": "vue-file-drop",
   "description": "Drop",
-  "repository": "https://github.com/TomokiMiyauci/vue-droparea",
+  "repository": "https://github.com/TomokiMiyauci/vue-file-drop",
   "author": "TomokiMiyauci <development.operation.6.6.6@gmail.com>",
   "license": "MIT",
   "private": true,
