@@ -11,10 +11,7 @@
     <slot>
       <div :class="$style.div">
         <slot name="background">
-          <mdi-file
-            class="absolute w-full h-full object-none object-center text-gray-200"
-            style="z-index: -1"
-          />
+          <background-icon style="z-index: -1" />
         </slot>
         <slot name="drop">
           <drop-navigation :class="pointerEventsNone" />
@@ -40,14 +37,14 @@
   import ButtonFileDialog from '/@/components/ButtonFileDialog.vue'
   import DropError from '/@/components/DropError.vue'
   import { fileDialog } from 'file-select-dialog'
-  import MdiFile from './base/icons/MdiFile.vue'
+  import BackgroundIcon from '/@/components/BackgroundIcon.vue'
   import { useError } from '/@/core/useError'
   export default defineComponent({
     components: {
       DropNavigation,
       ButtonFileDialog,
-      MdiFile,
       DropError,
+      BackgroundIcon,
     },
 
     props: {
@@ -134,34 +131,6 @@
 
   .div {
     @apply gap-5 relative h-4/5 w-4/5 flex flex-col items-center justify-center;
-  }
-
-  .change-border01::after {
-    // 省略
-    transition-delay: 0.9s;
-  }
-
-  .change-border01::before {
-    // 省略
-    transition-delay: 0.3s;
-  }
-
-  .change-border01__inner::after {
-    // 省略
-    transition-delay: 0s;
-  }
-
-  .change-border01__inner::before {
-    // 省略
-    transition-delay: 0.6s;
-  }
-
-  /* hover */
-  .change-border01:hover::after,
-  .change-border01:hover::before,
-  .change-border01:hover .change-border01__inner::after,
-  .change-border01:hover .change-border01__inner::before {
-    transition: none;
   }
 </style>
 

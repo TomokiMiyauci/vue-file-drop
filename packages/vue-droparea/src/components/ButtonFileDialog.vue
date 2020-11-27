@@ -1,7 +1,7 @@
 <template>
   <button class="button" @click="$emit('click')">
     <mdi-file />
-    <span class="align-middle"> ファイルを選択 </span>
+    <span class="span"> ファイルを選択 </span>
   </button>
 </template>
 
@@ -17,5 +17,9 @@
 <style scoped lang="scss">
   .button {
     @apply bg-gray-50 outline-none rounded shadow p-2 inline;
+  }
+
+  .span {
+    @apply align-middle;
   }
 </style>
