@@ -1,4 +1,4 @@
-// import { RollupOptions } from 'rollup'
+// import { RollupOptions, OutputOptions } from 'rollup'
 import vue from 'rollup-plugin-vue'
 import typescript from 'rollup-plugin-typescript2'
 import { join } from 'path'
@@ -7,17 +7,38 @@ import postcss from 'rollup-plugin-postcss'
 import tailwind from 'tailwindcss'
 import resolve from 'rollup-plugin-node-resolve'
 import autoprefixer from 'autoprefixer'
+import { unpkg, main, module } from './package.json'
+import { terser } from 'rollup-plugin-terser'
+
+const outputOptions = [
+  {
+    format: 'umd',
+    file: unpkg,
+    name: 'VueFileDrop',
+    globals: { vue: 'Vue' },
+    compact: true,
+  },
+  {
+    format: 'cjs',
+    exports: 'default',
+    file: main,
+  },
+  {
+    format: 'es',
+    file: module,
+  },
+]
 
 const config = {
   input: 'src/components/VueDroparea.vue',
 
   output: [
-    {
-      format: 'umd',
-      file: 'dist/vueFileDrop.js',
-      name: 'VueFileDrop',
-      globals: { vue: 'Vue' },
-    },
+    ...outputOptions,
+    ...outputOptions.map((option) => ({
+      ...option,
+      file: option.file?.replace(/\.js$/, '.prod.js'),
+      plugins: [terser()],
+    })),
   ],
   plugins: [
     alias({
