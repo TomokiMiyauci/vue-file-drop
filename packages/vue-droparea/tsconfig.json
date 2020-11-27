@@ -12,8 +12,7 @@
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
-      "/@/*": ["src/*"],
-      "f/": ["sss"]
+      "/@/*": ["src/*"]
     },
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },
