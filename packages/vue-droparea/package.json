@@ -1,6 +1,6 @@
 {
   "name": "vue-file-drop",
-  "version": "0.0.0",
+  "version": "0.1.0-alpha.0",
   "author": "TomokiMiyauci <development.operation.6.6.6@gmail.com>",
   "license": "MIT",
   "main": "dist/vueFileDrop.js",
