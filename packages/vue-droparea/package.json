@@ -6,7 +6,7 @@
   "main": "dist/vueFileDrop.js",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "rollup -c rollup.config.ts",
     "lint:markup": "vti diagnostics",
     "lint:script": "eslint --ext .ts,vue --ignore-path .gitignore .",
     "lint:style": "stylelint src/**/*.{css,scss,vue}",
