@@ -1,10 +1,10 @@
 <template>
-  <transition name="fade">
+  <transition name="slide-up">
     <component
       :is="component"
       v-show="isShow"
       :message="message"
-      class="absolute bottom-0 w-full py-3"
+      :class="$style.component"
     />
   </transition>
 </template>
@@ -13,9 +13,10 @@
   import { defineComponent, inject, computed } from 'vue'
   import { UseNotice, key } from '/@/core/useNotice'
   import DropError from '/@/components/DropError.vue'
-  import NoticeSuccess from '/@/components/NoticeSuccess.vue'
+  import NoticeSuccess from '/@/components/notice/NoticeSuccess.vue'
+  import NoticeError from '/@/components/notice/NoticeError.vue'
   export default defineComponent({
-    components: { DropError, NoticeSuccess },
+    components: { NoticeError, NoticeSuccess },
 
     setup() {
       const component = computed(() => {
@@ -25,10 +26,9 @@
           }
 
           case 'error': {
-            return DropError
+            return NoticeError
           }
         }
-        return DropError
       })
       const { isShow, message, type } = inject(key) as Pick<
         UseNotice,
@@ -40,23 +40,10 @@
   })
 </script>
 
-<style scoped>
-  .fade-enter-active,
-  .fade-leave-active {
-    transition: all 0.5s ease;
-  }
+<style scoped src="/@/assets/styles/transitions.scss"></style>
 
-  .fade-enter-from,
-  .fade-leave-to {
-    transform: translateY(100%);
-
-    @apply opacity-0;
-  }
-
-  .fade-enter-to,
-  .fade-leave-from {
-    transform: translateY(0);
-
-    @apply opacity-100;
+<style module>
+  .component {
+    @apply absolute bottom-0 w-full py-3;
   }
 </style>
