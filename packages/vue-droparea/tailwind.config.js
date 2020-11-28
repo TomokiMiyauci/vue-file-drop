@@ -16,6 +16,9 @@ const config = {
   variants: {
     extend: {},
   },
+  corePlugins: {
+    preflight: false,
+  },
   plugins: [],
 }
 
