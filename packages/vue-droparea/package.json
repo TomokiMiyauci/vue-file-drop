@@ -8,6 +8,7 @@
   "module": "dist/vue-file-drop.esm-bundler.js",
   "unpkg": "dist/vue-file-drop.global.js",
   "jsdelivr": "dist/vue-file-drop.global.js",
+  "sideEffects": false,
   "keywords": [
     "file",
     "drop",
