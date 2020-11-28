@@ -2,11 +2,23 @@
   "name": "vue-file-drop",
   "version": "0.1.0-alpha.2",
   "author": "TomokiMiyauci <development.operation.6.6.6@gmail.com>",
+  "description": "Vue component for File DnD area and call File Select Dialog",
   "license": "MIT",
   "main": "dist/vue-file-drop.cjs.js",
   "module": "dist/vue-file-drop.esm-bundler.js",
   "unpkg": "dist/vue-file-drop.global.js",
   "jsdelivr": "dist/vue-file-drop.global.js",
+  "keywords": [
+    "file",
+    "drop",
+    "drag",
+    "DnD",
+    "vue3",
+    "vue",
+    "library",
+    "component",
+    "file-dialog"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "rollup -c rollup.config.ts",
