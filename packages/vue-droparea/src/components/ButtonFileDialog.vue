@@ -1,6 +1,6 @@
 <template>
   <button :class="$style.button" @click="$emit('click')">
-    <mdi-file />
+    <mdi-file :class="$style.icon" />
     <span :class="$style.span">SELECT FILE</span>
   </button>
 </template>
@@ -16,14 +16,14 @@
 
 <style module lang="scss">
   .button {
-    @apply bg-white outline-none transition duration-200 rounded shadow p-2 inline;
+    @apply bg-white transition duration-200 rounded shadow p-2 border-none text-gray-600;
 
     &:hover {
-      @apply shadow-md bg-gray-50;
+      @apply shadow-md bg-gray-100 cursor-pointer;
     }
 
     &:active {
-      @apply bg-gray-100 ring-2 ring-green-300;
+      @apply ring-2 ring-green-300;
     }
 
     &:focus {
@@ -31,7 +31,11 @@
     }
   }
 
+  .icon {
+    @apply align-middle;
+  }
+
   .span {
-    @apply align-middle ml-2;
+    @apply ml-2 align-middle;
   }
 </style>
