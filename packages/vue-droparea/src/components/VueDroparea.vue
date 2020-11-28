@@ -8,10 +8,10 @@
     @dragenter="onDragEnter"
   >
     <slot>
-      <div :class="$style.bg">
+      <div :class="[$style.bg, pointerEventsNone]">
         <background-icon />
       </div>
-      <div :class="$style.div">
+      <div :class="[$style.div, pointerEventsNone]">
         <slot name="drop">
           <drop-navigation :class="pointerEventsNone" />
         </slot>
@@ -24,30 +24,27 @@
       </div>
     </slot>
 
-    <drop-error
-      v-show="isShow"
-      class="absolute bottom-0 w-full p-2"
-      :message="message"
-    />
+    <global-notice />
   </div>
 </template>
 
 <script lang="ts">
-  import { defineComponent, ref, computed, PropType } from 'vue'
+  import { defineComponent, ref, computed, PropType, provide } from 'vue'
   import DropNavigation from '/@/components/DropNavigation.vue'
   import ButtonFileDialog from '/@/components/ButtonFileDialog.vue'
   import Or from '/@/components/Or.vue'
-  import DropError from '/@/components/DropError.vue'
   import { fileDialog } from 'file-select-dialog'
   import BackgroundIcon from '/@/components/BackgroundIcon.vue'
-  import { useError } from '/@/core/useError'
+  import { useNotice, key } from '/@/core/useNotice'
+  import GlobalNotice from '/@/components/GlobalNotice.vue'
+
   export default defineComponent({
     components: {
       DropNavigation,
       ButtonFileDialog,
-      DropError,
       BackgroundIcon,
       Or,
+      GlobalNotice,
     },
 
     props: {
@@ -68,7 +65,10 @@
     },
 
     setup(props) {
-      const { setError, ...rest } = useError()
+      const { setNotice, ...rest } = useNotice()
+
+      provide(key, rest)
+
       const onClick = async () => {
         const file = await fileDialog({
           accept: props.accept,
@@ -84,13 +84,15 @@
         console.log(files)
 
         if (props.multiple && files.length > 1) {
-          setError('hogehoge')
+          setNotice({ message: 'Error', type: 'error' })
+          return
         }
+
+        setNotice({ message: 'success' })
       }
 
       const onDragEnter = () => {
         dragEnter.value = true
-        console.log(2)
       }
 
       const onDragLeave = () => {
@@ -114,7 +116,6 @@
         dragClass,
         onDragLeave,
         pointerEventsNone,
-        ...rest,
       }
     },
   })
@@ -125,10 +126,10 @@
     height: 500px;
     max-width: 500px;
 
-    @apply transition-all bg-gradient-to-r shadow duration-300 border-dashed rounded-md flex flex-col items-center justify-center border border-gray-400 relative text-gray-500 antialiased uppercase;
+    @apply transition-all bg-gradient-to-r shadow duration-300 border-dashed rounded-md flex flex-col items-center justify-center border border-gray-400 relative text-gray-500 antialiased uppercase overflow-hidden;
 
     &:hover {
-      @apply shadow-xl ring-2 ring-inset bg-gray-100 ring-green-300;
+      @apply shadow-xl ring-2 bg-gray-100 ring-green-300;
     }
   }
 
@@ -143,6 +144,6 @@
 
 <style scoped>
   .drag-enter {
-    @apply bg-green-50;
+    @apply bg-green-50 ring-inset ring-2 ring-green-300;
   }
 </style>
