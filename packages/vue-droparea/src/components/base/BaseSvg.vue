@@ -6,7 +6,7 @@
     :viewBox="`0 0 24 24`"
     :aria-labelledby="iconName"
     role="presentation"
-    class="inline"
+    :class="$style.svg"
   >
     <title lang="en">{{ iconName }}</title>
     <g :fill="iconColor">
@@ -41,3 +41,9 @@
     },
   })
 </script>
+
+<style module lang="scss">
+  .svg {
+    @apply inline align-middle;
+  }
+</style>

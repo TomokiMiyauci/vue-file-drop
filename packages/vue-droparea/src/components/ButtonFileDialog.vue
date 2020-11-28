@@ -1,15 +1,17 @@
 <template>
   <button :class="$style.button" @click="$emit('click')">
-    <mdi-file :class="$style.icon" />
-    <span :class="$style.span">SELECT FILE</span>
+    <text-icon text="SELECT FILE">
+      <mdi-file />
+    </text-icon>
   </button>
 </template>
 
 <script lang="ts">
   import { defineComponent } from 'vue'
   import MdiFile from '/@/components/base/icons/MdiFile.vue'
+  import TextIcon from '/@/components/base/IconText.vue'
   export default defineComponent({
-    components: { MdiFile },
+    components: { MdiFile, TextIcon },
     emits: ['click'],
   })
 </script>
@@ -29,13 +31,5 @@
     &:focus {
       @apply outline-none;
     }
-  }
-
-  .icon {
-    @apply align-middle;
-  }
-
-  .span {
-    @apply ml-2 align-middle;
   }
 </style>
