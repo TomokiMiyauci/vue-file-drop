@@ -1,7 +1,7 @@
 <template>
-  <div class="bg-red-400 px-3 shadow">
+  <div class="bg-green-400 px-3 shadow">
     <div class="px-3">
-      <mdi-alert class="align-middle mr-2" />
+      <mdi-check-circle class="align-middle mr-2" />
       <span class="align-middle">{{ message }}</span>
     </div>
   </div>
@@ -9,11 +9,11 @@
 
 <script lang="ts">
   import { defineComponent } from 'vue'
-  import MdiAlert from '/@/components/base/icons/MdiAlert.vue'
+  import MdiCheckCircle from '/@/components/base/icons/MdiCheckCircle.vue'
 
   export default defineComponent({
     components: {
-      MdiAlert,
+      MdiCheckCircle,
     },
 
     props: {
