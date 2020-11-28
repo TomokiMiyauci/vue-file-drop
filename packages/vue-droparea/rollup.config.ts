@@ -12,11 +12,10 @@ import { terser } from 'rollup-plugin-terser'
 
 const outputOptions = [
   {
-    format: 'umd',
+    format: 'iife',
     file: unpkg,
     name: 'VueFileDrop',
     globals: { vue: 'Vue' },
-    compact: true,
   },
   {
     format: 'cjs',
