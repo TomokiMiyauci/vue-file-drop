@@ -1,9 +1,9 @@
 <template>
-  <mdi-file :class="$style.icon" style="z-index: -1" />
+  <mdi-file :class="$style.icon" />
 </template>
 
 <script lang="ts">
-  import MdiFile from '/@/components/base/icons/MdiFile.vue'
+  import MdiFile from '/@/components/base/icons/MdiFileDownload.vue'
 
   import { defineComponent } from 'vue'
   export default defineComponent({
@@ -15,6 +15,6 @@
 
 <style module lang="scss">
   .icon {
-    @apply absolute w-full h-full object-none object-center text-gray-200;
+    @apply w-full h-full text-gray-200;
   }
 </style>

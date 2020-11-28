@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.div">Drop file here</div>
+  <span>Or</span>
 </template>
 
 <script lang="ts">
@@ -7,8 +7,8 @@
   export default defineComponent({})
 </script>
 
-<style module lang="scss">
-  .div {
-    @apply text-center text-2xl;
+<style scoped lang="scss">
+  .span {
+    @apply align-middle;
   }
 </style>

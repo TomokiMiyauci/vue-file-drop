@@ -1,7 +1,6 @@
 <template>
   <div
     :class="[$style.drag, dragClass]"
-    class="relative"
     @drop.prevent="onDrap"
     @dragover.prevent
     @dragstart.prevent="onDragEnter"
@@ -9,13 +8,15 @@
     @dragenter="onDragEnter"
   >
     <slot>
+      <div :class="$style.bg">
+        <background-icon />
+      </div>
       <div :class="$style.div">
-        <slot name="background">
-          <background-icon style="z-index: -1" />
-        </slot>
         <slot name="drop">
           <drop-navigation :class="pointerEventsNone" />
         </slot>
+
+        <or />
 
         <slot name="button">
           <button-file-dialog :class="pointerEventsNone" @click="onClick" />
@@ -35,6 +36,7 @@
   import { defineComponent, ref, computed, PropType } from 'vue'
   import DropNavigation from '/@/components/DropNavigation.vue'
   import ButtonFileDialog from '/@/components/ButtonFileDialog.vue'
+  import Or from '/@/components/Or.vue'
   import DropError from '/@/components/DropError.vue'
   import { fileDialog } from 'file-select-dialog'
   import BackgroundIcon from '/@/components/BackgroundIcon.vue'
@@ -45,6 +47,7 @@
       ButtonFileDialog,
       DropError,
       BackgroundIcon,
+      Or,
     },
 
     props: {
@@ -122,15 +125,19 @@
     height: 500px;
     max-width: 500px;
 
-    @apply transition-colors bg-gradient-to-r shadow-md duration-200 border-dashed rounded-md flex flex-col items-center justify-center border border-gray-500 relative;
+    @apply transition-all bg-gradient-to-r shadow duration-300 border-dashed rounded-md flex flex-col items-center justify-center border border-gray-400 relative text-gray-500 antialiased uppercase;
 
     &:hover {
-      @apply shadow-md;
+      @apply shadow-xl ring-2 ring-inset bg-gray-100 ring-green-300;
     }
   }
 
   .div {
-    @apply gap-5 relative h-4/5 w-4/5 flex flex-col items-center justify-center;
+    @apply gap-8 relative flex flex-col items-center justify-center;
+  }
+
+  .bg {
+    @apply absolute w-3/5 h-3/5;
   }
 </style>
 
