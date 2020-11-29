@@ -3779,9 +3779,9 @@ file-entry-cache@^6.0.0:
     flat-cache "^3.0.4"
 
 file-select-dialog@^1.4.0:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/file-select-dialog/-/file-select-dialog-1.4.1.tgz#22dde977d724d768256080868daebb70db369dca"
-  integrity sha512-K7Ke4VzWzWc4SES7tW9nZ9vxsfNSu64AOZaddOxGruaNrN7nxmkJs727yfSj5ScRog+Oh4fdk5u7N93x3DY8Dg==
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/file-select-dialog/-/file-select-dialog-1.5.0.tgz#1b494e91b91514d52024c2f4837491d211ea11c8"
+  integrity sha512-i/YV57TE7rwJ28C4bbrTDgs/J9T/UAQbWhSjQnbNOvRyk2Sj4+arvNok4AiDI+KbLNvsF1AwYmFK0YsbX0LaoQ==
 
 fill-range@^4.0.0:
   version "4.0.0"
