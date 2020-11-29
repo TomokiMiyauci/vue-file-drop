@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/TomokiMiyauci/vue-file-drop/compare/v0.2.0...v0.2.1) (2020-11-29)
+
+
+### Bug Fixes
+
+* **vuefiledrop.vue:** fix typo ([fd5d37f](https://github.com/TomokiMiyauci/vue-file-drop/commit/fd5d37fe4f96c673672d6b693f2c58ac7f1e2ed2))
+
+
+
+
+
 # [0.2.0](https://github.com/TomokiMiyauci/vue-file-drop/compare/v0.1.4...v0.2.0) (2020-11-29)
 
 
