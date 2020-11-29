@@ -40,7 +40,26 @@
   })
 </script>
 
-<style scoped src="/@/assets/styles/transitions.scss"></style>
+<style scoped lang="scss">
+  .slide-up-enter-active,
+  .slide-up-leave-active {
+    transition: all 0.5s ease;
+  }
+
+  .slide-up-enter-from,
+  .slide-up-leave-to {
+    transform: translateY(100%);
+
+    @apply opacity-0;
+  }
+
+  .slide-up-enter-to,
+  .slide-up-leave-from {
+    transform: translateY(0);
+
+    @apply opacity-100;
+  }
+</style>
 
 <style module>
   .component {

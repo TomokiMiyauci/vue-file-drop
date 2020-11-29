@@ -74,6 +74,8 @@
           accept: props.accept,
           multiple: props.multiple,
         })
+
+        setNotice({ message: 'success' })
       }
 
       const onDrap = async ({ dataTransfer }: DragEvent) => {
