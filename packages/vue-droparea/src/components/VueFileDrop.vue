@@ -57,40 +57,42 @@
         type: Boolean,
         default: true,
       },
-
-      strict: {
-        type: Boolean,
-        default: true,
-      },
     },
 
-    setup(props) {
+    emits: ['accept'],
+
+    setup(props, { emit }) {
       const { setNotice, ...rest } = useNotice()
 
       provide(key, rest)
 
       const onClick = async () => {
-        const file = await fileDialog({
+        const fileList = await fileDialog({
           accept: props.accept,
           multiple: props.multiple,
         })
 
         setNotice({ message: 'success' })
+        onEmit(fileList)
+      }
+
+      const onEmit = (fileList: FileList): void => {
+        emit('accept', fileList)
       }
 
       const onDrap = async ({ dataTransfer }: DragEvent) => {
         dragEnter.value = false
-        const files = dataTransfer?.files
+        const filesList = dataTransfer?.files
 
-        if (!files) return
-        console.log(files)
+        if (!filesList) return
 
-        if (props.multiple && files.length > 1) {
+        if (props.multiple && filesList.length > 1) {
           setNotice({ message: 'Error', type: 'error' })
           return
         }
 
         setNotice({ message: 'success' })
+        onEmit(FileList)
       }
 
       const onDragEnter = () => {
