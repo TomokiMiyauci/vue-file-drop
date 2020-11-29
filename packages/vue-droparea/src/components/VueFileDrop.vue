@@ -82,17 +82,17 @@
 
       const onDrap = async ({ dataTransfer }: DragEvent) => {
         dragEnter.value = false
-        const filesList = dataTransfer?.files
+        const fileList = dataTransfer?.files
 
-        if (!filesList) return
+        if (!fileList) return
 
-        if (props.multiple && filesList.length > 1) {
+        if (props.multiple && fileList.length > 1) {
           setNotice({ message: 'Error', type: 'error' })
           return
         }
 
         setNotice({ message: 'success' })
-        onEmit(FileList)
+        onEmit(fileList)
       }
 
       const onDragEnter = () => {
