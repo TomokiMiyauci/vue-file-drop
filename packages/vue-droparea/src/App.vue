@@ -1,14 +1,14 @@
 <template>
-  <vue-droparea style="width: 500px; margin: 0 auto" />
+  <vue-file-drop style="width: 500px; margin: 0 auto" />
 </template>
 
 <script lang="ts">
   import { defineComponent } from 'vue'
-  import VueDroparea from './components/VueDroparea.vue'
+  import VueFileDrop from './components/VueFileDrop.vue'
 
   export default defineComponent({
     components: {
-      VueDroparea,
+      VueFileDrop,
     },
   })
 </script>
