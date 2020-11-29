@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/TomokiMiyauci/vue-file-drop/compare/v0.1.4...v0.2.0) (2020-11-29)
+
+
+### Features
+
+* **vuefiledrop.vue:** add custom event ([3eb88bc](https://github.com/TomokiMiyauci/vue-file-drop/commit/3eb88bcc53cc24e43f055946200139bb4e2955e3))
+
+
+
+
+
 ## [0.1.4](https://github.com/TomokiMiyauci/vue-file-drop/compare/v0.1.3...v0.1.4) (2020-11-29)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "vue-file-drop",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "author": "TomokiMiyauci <development.operation.6.6.6@gmail.com>",
   "description": "Vue component for File DnD area and call File Select Dialog",
   "license": "MIT",
