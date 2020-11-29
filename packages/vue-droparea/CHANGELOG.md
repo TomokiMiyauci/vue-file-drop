@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.4](https://github.com/TomokiMiyauci/vue-file-drop/compare/v0.1.3...v0.1.4) (2020-11-29)
+
+### Bug Fixes
+
+- import transition style ([36695e6](https://github.com/TomokiMiyauci/vue-file-drop/commit/36695e60a2f6741c12dcb4a19ec857ee8ec20c25))
+
 ## [0.1.3](https://github.com/TomokiMiyauci/vue-file-drop/compare/v0.1.1...v0.1.3) (2020-11-29)
 
 **Note:** Version bump only for package vue-file-drop
