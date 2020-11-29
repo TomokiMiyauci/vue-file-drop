@@ -7,20 +7,23 @@ import postcss from 'rollup-plugin-postcss'
 import tailwind from 'tailwindcss'
 import resolve from 'rollup-plugin-node-resolve'
 import autoprefixer from 'autoprefixer'
-import { unpkg, main, module } from './package.json'
+import { unpkg, main, module, name } from './package.json'
 import { terser } from 'rollup-plugin-terser'
+import json from '@rollup/plugin-json'
+import { pascalCase } from 'pascal-case'
 
 const outputOptions = [
   {
     format: 'iife',
     file: unpkg,
-    name: 'VueFileDrop',
+    name: pascalCase(name),
+    exports: 'named',
     globals: { vue: 'Vue' },
   },
   {
     format: 'cjs',
-    exports: 'default',
     file: main,
+    exports: 'named',
   },
   {
     format: 'es',
@@ -29,7 +32,7 @@ const outputOptions = [
 ]
 
 const config = {
-  input: 'src/components/VueDroparea.vue',
+  input: 'src/index.ts',
 
   output: [
     ...outputOptions,
@@ -40,6 +43,7 @@ const config = {
     })),
   ],
   plugins: [
+    json(),
     alias({
       entries: [{ find: /^\/@\//, replacement: join(__dirname, 'src', '/') }],
     }),
